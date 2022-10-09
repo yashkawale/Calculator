@@ -1,0 +1,98 @@
+<html> 
+ <head> 
+  <title>Calculator</title> 
+  <style>
+            table{
+                border: 3px dotted black;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 10px;
+            }
+            input[type="button"]{
+                width: 100%;
+                color: black;
+                background-color:burlywood;
+                font-size: larger;
+            }
+            input[type="text"]{
+                font-size: larger;
+                border: 2px solid black;
+                font-weight: bold;
+                color: darkred;
+                border-radius: 5px;
+            }
+            #name{
+                font-weight: bold;
+                font-family: cursive;
+                font-size: x-large;
+            }
+        </style> 
+ </head> 
+ <body> 
+  <table border="0.5px" id="calculator"> 
+   <tbody>
+    <tr> 
+     <td colspan="4" align="center" id="name">Semi-Pro Calculator</td> 
+    </tr> 
+    <tr height="3px"> 
+     <td colspan="4"><input type="text" id="result" disabled></td> 
+    </tr> 
+    <tr> 
+     <td><input type="button" value="/" onclick="dis('/')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="-" onclick="dis('-')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="*" onclick="dis('*')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="C" onclick="clr()"></td> 
+    </tr> 
+    <tr> 
+     <td><input type="button" value="7" onclick="dis('7')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="8" onclick="dis('8')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="9" onclick="dis('9')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="." onclick="dis('.')" onkeydown="keyevent(event)"></td> 
+    </tr> 
+    <tr> 
+     <td><input type="button" value="4" onclick="dis('4')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="5" onclick="dis('5')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="6" onclick="dis('6')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="+" onclick="dis('+')" onkeydown="keyevent(event)"></td> 
+    </tr> 
+    <tr> 
+     <td><input type="button" value="1" onclick="dis('1')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="2" onclick="dis('2')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="3" onclick="dis('3')" onkeydown="keyevent(event)"></td> 
+     <td><input type="button" value="0" onclick="dis('0')" onkeydown="keyevent(event)"></td> 
+    </tr> 
+    <tr> 
+     <td colspan="4" align="center"><input type="button" value="=" onclick="solve()"></td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <script>
+            function dis(val){
+                document.getElementById("result").value += val;
+            }
+            function keyevent(event){
+                if(event.key == '0' || event.key == '1' || event.key == '2' ||event.key == '3' ||
+                event.key == '4' || event.key == '5' || event.key == '6' || event.key == '7' || event.key == '8' ||
+                event.key == '9' || event.key == '/' || event.key == '*' || event.key == '-' || event.key == '+')
+                document.getElementById(event).value +=event.key;
+            }
+            function clr(){
+                document.getElementById("result").value ="";
+            }
+            var cal=document.getElementById("calculator");
+            cal.onkeyup=function(event){
+                if (event.keycode === 13){
+                    console.log=("Enter");
+                    let x=document.getElementById("result").value
+                    console.log(x);
+                    solve();
+                }
+            }
+            function solve(){
+                let x=document.getElementById("result").value
+                let y=eval(x)
+                document.getElementById("result").value =y
+            }
+        </script>  
+</body></html>
+
