@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="site.js"></script>
+</head>
+
+<body>
+    <table border="0.5px" id="calculator">
+        <tbody>
+            <tr>
+                <td colspan="4" align="center" id="name">Semi-Pro Calculator</td>
+            </tr>
+            <tr height="3px">
+                <td colspan="4"><input type="text" id="result" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" onclick="dis('/')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="-" onclick="dis('-')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="*" onclick="dis('*')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="C" onclick="clr()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="dis('7')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="8" onclick="dis('8')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="9" onclick="dis('9')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="." onclick="dis('.')" onkeydown="keyevent(event)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="dis('4')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="5" onclick="dis('5')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="6" onclick="dis('6')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="+" onclick="dis('+')" onkeydown="keyevent(event)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="dis('1')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="2" onclick="dis('2')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="3" onclick="dis('3')" onkeydown="keyevent(event)"></td>
+                <td><input type="button" value="0" onclick="dis('0')" onkeydown="keyevent(event)"></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center"><input type="button" value="=" onclick="solve()"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
